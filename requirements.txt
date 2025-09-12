@@ -1,0 +1,15 @@
+pip install langchain
+pip install chromadb
+pip install pypdf
+pip install pytest
+pip install transformers
+pip install accelerate
+pip install peft
+pip install trl
+pip install bitsandbytes
+pip install pandasai
+pip install streamlit
+pip install langchain_community
+
+
+
