@@ -1,5 +1,7 @@
 from llama_index.core import PromptTemplate
 
+
+
 instruction_str = """\
     1. Convert the query to executable Python code using Pandas.
     2. The final line of code should be a Python expression that can be called with the `eval()` function.
@@ -23,6 +25,7 @@ new_prompt = PromptTemplate(
 
 context = """Purpose: The primary role of this agent is to assist users by providing accurate 
             information about the provided dataset using pandas """
+
 
 
 #"You are a data analyst. Answer questions about the dataframe."

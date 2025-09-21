@@ -1,4 +1,4 @@
-pip install langchain
+ langchain~=0.3.27
 pip install chromadb
 pip install pypdf
 pip install pytest
@@ -13,3 +13,9 @@ pip install langchain_community
 
 
 
+
+
+streamlit~=1.49.1
+pandas~=2.3.2
+bcrypt~=4.3.0
+pandasai~=2.4.2
