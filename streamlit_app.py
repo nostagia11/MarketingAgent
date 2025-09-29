@@ -84,11 +84,11 @@ def preview_data(query: str) -> str:
 
 
 #----------
-#rag_page = st.Page(
-#   "app/rag/Pdf_rag.py",
-#    title="Retrieval Augmented Generation (RAG)",
-#   icon=":material/database:",
-#)
+rag_page = st.Page(
+   "pages/ragg.py",
+    title="Retrieval Augmented Generation (RAG)",
+   icon=":material/database:",
+)
 #analysis = st.Page(
 #   "app/chartgeneration/chat_with_dataset.py", title="chat with dataset", icon=":material/quick_reference:"
 #)
@@ -107,9 +107,9 @@ selected_page = st.navigation(
         #"Login": [login],
         "GenAI": [Marketing_Assistant],
         "Tools for GenAI": [chart_generation, Chat_with_db],
-        #"Agentic RAG": [
-        #   rag_page
-        #],
+        "Agentic RAG": [
+           rag_page
+        ],
 
     },
     position="top",
