@@ -6,6 +6,8 @@ import pandas as pd
 from langchain_ollama import OllamaLLM
 from langchain.agents import initialize_agent, AgentType, Tool
 
+from registerlogin import app_interface, signin_form, signup_form
+
 st.set_page_config(page_title="Marketing app", layout="wide")
 #st.title('Chat with dataset')
 
@@ -82,25 +84,29 @@ def preview_data(query: str) -> str:
 #elif not query:
 #   st.warning("⚠️ Please enter a query before submitting.")
 
-
 #----------
 rag_page = st.Page(
-   "pages/ragg.py",
+    "app/rag/app.py",
     title="Retrieval Augmented Generation (RAG)",
-   icon=":material/database:",
+    icon=":material/database:",
 )
+#ragg_page = st.Page(
+#    "app/rag/rag_front.py",
+#    title="Retrieval Augmented Generation (frontRAG)",
+#    icon=":material/database:",
+#)
 #analysis = st.Page(
 #   "app/chartgeneration/chat_with_dataset.py", title="chat with dataset", icon=":material/quick_reference:"
 #)
 chart_generation = st.Page(
     "chartgeneration/chart_generation.py", title="generate charts from dataset", icon=":material/quick_reference:"
 )
-Chat_with_db = st.Page("pages/front_query_db.py", title="chat with DB",
+Chat_with_db = st.Page("Db_query/front_query_db.py", title="chat with DB",
                        )
 
-Marketing_Assistant = st.Page("pages/AI_Agent.py", title="Marketing assistant",
+Marketing_Assistant = st.Page("assistant/AI_Agent.py", title="Marketing assistant",
                               )
-login = st.Page("pages/registerlogin.py", title="Register")
+#login = st.Page("pages/registerlogin.py", title="Register")
 
 selected_page = st.navigation(
     {
@@ -108,11 +114,34 @@ selected_page = st.navigation(
         "GenAI": [Marketing_Assistant],
         "Tools for GenAI": [chart_generation, Chat_with_db],
         "Agentic RAG": [
-           rag_page
+            rag_page,
         ],
 
     },
     position="top",
 )
 
-selected_page.run()
+# ------------------ SESSION STATE ------------------
+if "username" not in st.session_state:
+    st.session_state.username = ""
+if "form" not in st.session_state:
+    st.session_state.form = "signin_form"  # default form is login
+
+# ------------------ MAIN FLOW ------------------
+if st.session_state.username == "":
+    if st.session_state.form == "signup_form":
+        signup_form()
+        if st.button("Already have an account? Sign In"):
+            st.session_state.form = "signin_form"
+            st.rerun()
+    else:
+        signin_form()
+        st.switch_page(Marketing_Assistant)
+        if st.button("Create Account"):
+            st.session_state.form = "signup_form"
+            st.rerun()
+
+
+else:
+    app_interface()
+    selected_page.run()

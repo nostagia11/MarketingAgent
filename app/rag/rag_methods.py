@@ -19,7 +19,7 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 
 from app.rag.get_embeddings import get_embedding_function
 
-dotenv.load_dotenv()
+
 
 os.environ["USER_AGENT"] = "myagent"
 DB_DOCS_LIMIT = 10
@@ -28,8 +28,8 @@ DB_DOCS_LIMIT = 10
 def stream_llm_response(llm_stream, messages):
     response_message = ""
 
-    for chunk in llm_stream.invoke(messages):
-        response_message += chunk
+    for chunk in llm_stream.stream(messages):
+        response_message += chunk.content
         yield chunk
 
     st.session_state.messages.append({"role": "assistant", "content": response_message})
@@ -67,8 +67,7 @@ def load_doc_to_db():
                         st.toast(f"Error loading document {doc_file.name}: {e}", icon="⚠️")
                         print(f"Error loading document {doc_file.name}: {e}")
                     
-                    finally:
-                        os.remove(file_path)
+
 
                 else:
                     st.error(F"Maximum number of documents reached ({DB_DOCS_LIMIT}).")

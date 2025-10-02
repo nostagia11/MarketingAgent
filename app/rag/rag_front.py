@@ -5,39 +5,25 @@ import uuid
 
 from langchain_community.llms.ollama import Ollama
 
-# check if it's linux so it works on Streamlit Cloud
-if os.name == 'posix':
-    __import__('pysqlite3')
-    import sys
-
-    sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
-
 from langchain.schema import HumanMessage, AIMessage
 
-from app.rag.rag_methods import (
-    load_doc_to_db,
-
-    stream_llm_response,
-    stream_llm_rag_response,
+from app.rag.populate_db import (
+    main,
+load_documents,
+    split_documents,
+    add_to_chroma,
+calculate_chunk_ids,
+clear_database
 )
-
-dotenv.load_dotenv()
-
+from app.rag.query_data import (
+main,
+query_rag
+)
 MODELS = [
     # "openai/o1-mini",
     "mistral:7b-instruct-q4_K_M"
 
 ]
-
-st.set_page_config(
-    page_title="RAG LLM app?",
-    page_icon="📚",
-    layout="centered",
-    initial_sidebar_state="expanded"
-)
-
-# --- Header ---
-st.html("""<h2 style="text-align: center;">📚🔍 <i> Do your LLM even RAG bro? </i> 🤖💬</h2>""")
 
 # --- Initial Setup ---
 if "session_id" not in st.session_state:
@@ -51,6 +37,7 @@ if "messages" not in st.session_state:
         {"role": "user", "content": "Hello"},
         {"role": "assistant", "content": "Hi there! How can I assist you today?"}
     ]
+
 
 # --- Side Bar LLM API Tokens ---
 with st.sidebar:
@@ -90,7 +77,7 @@ with st.sidebar:
         "📄 Upload a document",
         type=["pdf", "txt", "docx", "md"],
         accept_multiple_files=True,
-        on_change=load_doc_to_db,
+        on_change=main,
         key="rag_docs",
     )
 
@@ -107,7 +94,6 @@ if model_provider == "mistral":
 
         model="mistral:7b-instruct-q4_K_M"
     )
-# elif model_provider == "anthropic":
 
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
@@ -126,13 +112,6 @@ if prompt := st.chat_input("Your message"):
                     for m in st.session_state.messages]
 
         if not st.session_state.use_rag:
-            st.write_stream(stream_llm_response(llm_stream, messages))
+            st.write_stream(query_rag())
         else:
-            st.write_stream(stream_llm_rag_response(llm_stream, messages))
-
-with st.sidebar:
-    st.divider()
-
-    st.write(
-        "📋[Medium Blog](https://medium.com/@enricdomingo/program-a-rag-llm-chat-app-with-langchain-streamlit-o1-gtp-4o-and-claude-3-5-529f0f164a5e)")
-    st.write("📋[GitHub Repo](https://github.com/enricd/rag_llm_app)")
+            st.write_stream(query_rag())

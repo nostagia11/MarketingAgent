@@ -3,7 +3,9 @@ import psycopg2
 from psycopg2.extras import RealDictCursor
 import bcrypt
 
-# ------------------ DB CONNECTION ------------------
+
+
+# ------------------ DB CONNECTION cont ------------------
 @st.cache_resource
 def connect_db():
     conn = psycopg2.connect(
@@ -16,14 +18,12 @@ def connect_db():
     conn.set_client_encoding('UTF8')
     return conn
 
+
 conn = connect_db()
 cur = conn.cursor(cursor_factory=RealDictCursor)
 
-# ------------------ SESSION STATE ------------------
-if "username" not in st.session_state:
-    st.session_state.username = ""
-if "form" not in st.session_state:
-    st.session_state.form = "signin_form"  # default form is login
+
+
 
 # 🔐 Password Hashing Functions
 def hash_password(password: str) -> str:
@@ -31,12 +31,15 @@ def hash_password(password: str) -> str:
     salt = bcrypt.gensalt()
     return bcrypt.hashpw(password.encode('utf-8'), salt)
 
+
 def check_password(password: str, hashed: bytes) -> bool:
     """Verify a stored password against one provided by user."""
     return bcrypt.checkpw(password.encode('utf-8'), hashed)
 
+
 def user_update(name):
     st.session_state.username = name
+
 
 # ------------------ AUTH FORMS ------------------
 def signup_form():
@@ -85,7 +88,9 @@ def signin_form():
             )
             if cur.fetchone():
                 user_update(username)
-                #st.success(f"Welcome {username.upper()} 🎉")
+                st.success(f"Welcome {username.upper()} 🎉")
+
+
 
 
             else:
@@ -101,26 +106,10 @@ def app_interface():
             user_update("")
             st.session_state.form = "signin_form"
             st.rerun()
-
-    st.write(f"👋 You are logged in as **{st.session_state.username.upper()}**")
-
+        st.write(f"👋 You are logged in as **{st.session_state.username.upper()}**")
 
 
 
-# ------------------ MAIN FLOW ------------------
-if st.session_state.username == "":
-    if st.session_state.form == "signup_form":
-        signup_form()
-        if st.button("Already have an account? Sign In"):
-            st.session_state.form = "signin_form"
-            st.rerun()
-    else:
-        signin_form()
-
-        if st.button("Create Account"):
-            st.session_state.form = "signup_form"
-            st.rerun()
 
 
-else:
-    app_interface()
+
