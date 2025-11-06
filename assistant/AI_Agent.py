@@ -83,7 +83,7 @@ with chat_placeholder:
     for chat in st.session_state.history:
         div = f"""
         <div class="chat-row 
-        {'' if chat.origin == 'ai'  else 'row-reverse' }">
+        {'' if chat.origin == 'ai' else 'row-reverse' }">
             <img class="chat-icon" src="app/static/{
         'ai_icon.png' if chat.origin == 'ai'
         else 'user_icon.png'}"

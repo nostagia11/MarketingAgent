@@ -23,6 +23,7 @@ from app.rag.get_embeddings import get_embedding_function
 
 os.environ["USER_AGENT"] = "myagent"
 DB_DOCS_LIMIT = 10
+CHROMA_PATH= "chroma_store"
 
 # Function to stream the response of the LLM 
 def stream_llm_response(llm_stream, messages):
@@ -87,6 +88,7 @@ def initialize_vector_db(docs):
 
     vector_db = Chroma.from_documents(
         documents=docs,
+        persist_directory=CHROMA_PATH,
         embedding=embedding,
         collection_name=f"{str(time()).replace('.', '')[:14]}_" + st.session_state['session_id'],
     )
@@ -98,6 +100,8 @@ def initialize_vector_db(docs):
     while len(collection_names) > 20:
         chroma_client.delete_collection(collection_names[0])
         collection_names.pop(0)
+
+
 
     return vector_db
 
@@ -112,8 +116,10 @@ def _split_and_load_docs(docs):
 
     if "vector_db" not in st.session_state:
         st.session_state.vector_db = initialize_vector_db(docs)
+
     else:
-        st.session_state.vector_db.add_documents(document_chunks)
+
+        st.session_state.vector_db.add_documents(document_chunks,)
 
 
 # --- Retrieval Augmented Generation (RAG) Phase ---
@@ -155,3 +161,29 @@ def stream_llm_rag_response(llm_stream, messages):
         yield chunk
 
     st.session_state.messages.append({"role": "assistant", "content": response_message})
+
+
+
+
+
+
+
+
+def calculate_chunk_ids(chunks):
+    last_page_id = None
+    current_chunk_index = 0
+    for chunk in chunks:
+        source = chunk.metadata.get("source")
+        page = chunk.metadata.get("page")
+        current_page_id = f"{source}-{page}"
+        if current_page_id == last_page_id:
+            current_chunk_index += 1
+        else:
+            current_chunk_index = 0
+
+        # Calculate the chunk ID.
+        chunk_id = f"{current_page_id}:{current_chunk_index}"
+        last_page_id = current_page_id
+        # Add it to the chunk meta-data
+        chunk.metadata["id"] = chunk_id
+    return chunks

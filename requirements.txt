@@ -10,7 +10,8 @@ pip install bitsandbytes
 pip install pandasai
 pip install streamlit
 pip install langchain_community
-
+pip install sqlalchemy psycopg2-binary
+pip install sentence-transformers
 
 
 

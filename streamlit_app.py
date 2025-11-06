@@ -1,12 +1,12 @@
 import streamlit as st
 
-from app.rag.rag import rag_chain
+#from app.rag.rag import rag_chain
 from analysis.chat_with_dataset import build_dataset_agent
 import pandas as pd
 from langchain_ollama import OllamaLLM
 from langchain.agents import initialize_agent, AgentType, Tool
 
-from registerlogin import app_interface, signin_form, signup_form
+from registerlogin import  signin_form, signup_form, app_interface
 
 st.set_page_config(page_title="Marketing app", layout="wide")
 #st.title('Chat with dataset')
@@ -44,11 +44,11 @@ def preview_data(query: str) -> str:
         # description="Chat with dataset"
         #),
 
-        Tool(
-            name="RAG_QA",
-            func=lambda q: rag_chain.invoke(q)["result"],  # only return the answer
-            description="Use this tool to answer questions based on the indexed documents."
-        ),
+        #Tool(
+        #    name="RAG_QA",
+         #   func=lambda q: rag_chain.invoke(q)["result"],  # only return the answer
+          #  description="Use this tool to answer questions based on the indexed documents."
+        #),
         #Tool(
         #   name="Describe Data",
         #   func=describe_data,
@@ -101,21 +101,26 @@ rag_page = st.Page(
 chart_generation = st.Page(
     "chartgeneration/chart_generation.py", title="generate charts from dataset", icon=":material/quick_reference:"
 )
-Chat_with_db = st.Page("Db_query/front_query_db.py", title="chat with DB",
-                       )
-
+Chat_with_db = st.Page("Db_query/front_query_db.py", title="chat with DB",)
+chat_DB = st.Page("Db_query/posgresql_connector.py", title="chat with DB p",)
+chartessai =  st.Page("chartgeneration/chartessai.py",title="chart esasai",)
+dashboard_builder = st.Page("chartgeneration/dashboard_builder.py",title="Dashboard Builder",)
 Marketing_Assistant = st.Page("assistant/AI_Agent.py", title="Marketing assistant",
-                              )
-#login = st.Page("pages/registerlogin.py", title="Register")
+                       )
+rag_memory = st.Page("memory_test.py", title="RAG memory",)
+pg_essai = st.Page("app/rag/pgvector_essai.py", title="pg")
 
 selected_page = st.navigation(
     {
         #"Login": [login],
         "GenAI": [Marketing_Assistant],
-        "Tools for GenAI": [chart_generation, Chat_with_db],
+        "Tools for GenAI": [chart_generation, Chat_with_db,chat_DB],
         "Agentic RAG": [
             rag_page,
+            rag_memory,
+            pg_essai,
         ],
+        "Dashboard": [chartessai,dashboard_builder,],
 
     },
     position="top",

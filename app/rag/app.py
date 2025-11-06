@@ -95,6 +95,7 @@ with st.sidebar:
     with st.expander(f"📚 Documents in DB ({0 if not is_vector_db_loaded else len(st.session_state.rag_sources)})"):
         st.write([] if not is_vector_db_loaded else [source for source in st.session_state.rag_sources])
 
+
     # Main chat app
 model_provider = st.session_state.model.split(":")[0]
 if model_provider == "mistral":
