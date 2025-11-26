@@ -157,7 +157,7 @@ def app_interface():
             st.rerun()"""
     col1, col2 = st.columns([9, 1])
     with col2:
-        if st.button("Log Out"):
+        if st.button("Log Out",key="logoutg"):
             st.session_state.clear()
             st.rerun()
         st.write(f"👋 Logged in as **{st.session_state.username.upper()}** (User ID: {st.session_state.user_id})")

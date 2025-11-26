@@ -1,4 +1,4 @@
-import streamlit as st
+"""import streamlit as st
 import re
 
 from langchain_core.prompts import PromptTemplate
@@ -40,7 +40,7 @@ if submitted and user_query:
     # Step 1: Generate SQL
     with st.spinner("Agent thinking..."):
 
-        SQLprompt = f"""
+        SQLprompt = f
            You are an SQL generator. 
            Return ONLY a valid SQL query, nothing else. 
            Do NOT include explanations, reasoning, or <think> tags.
@@ -53,7 +53,7 @@ if submitted and user_query:
 
 
            Question: {user_query}
-           """
+
 
         llm_output = SQLquery_chain.invoke({"question": SQLprompt})
 
@@ -72,4 +72,38 @@ if submitted and user_query:
             result = db.run(sql_query)
             st.write("Result:", result)
         except Exception as e:
-            st.error(f"SQL execution failed: {e}")
+            st.error(f"SQL execution failed: {e}")"""
+import streamlit as st
+import re
+
+from Db_query.connector import pg_connection_widget
+from tools.agent_langchain import agent
+
+
+st.title("🤖 Chat with PostgreSQL (Agent + SQL Chain)")
+
+if "db_connected" not in st.session_state:
+    st.session_state.db_connected = False
+if "engine" not in st.session_state:
+    st.session_state.engine = None
+if "df_db" not in st.session_state:
+    st.session_state.df_db = None
+
+# Show connection UI
+pg_connection_widget()
+
+# Chat input UI
+with st.form("query_form"):
+    user_query = st.text_input("Ask something:")
+    submitted = st.form_submit_button("Run")
+
+if submitted and user_query:
+
+
+
+    with st.spinner("Agent thinking..."):
+        response = agent.run(user_query)
+
+    st.write("### Agent Response")
+    st.write(response)
+

@@ -1,12 +1,12 @@
 import streamlit as st
 
 #from app.rag.rag import rag_chain
-from analysis.chat_with_dataset import build_dataset_agent
+#from analysis.chat_with_dataset import build_dataset_agent
 import pandas as pd
 from langchain_ollama import OllamaLLM
-from langchain.agents import initialize_agent, AgentType, Tool
+#from langchain.agents import initialize_agent, AgentType, Tool
 
-from registerlogin import  signin_form, signup_form, app_interface
+from registerlogin import signin_form, signup_form, app_interface
 
 st.set_page_config(page_title="Marketing app", layout="wide")
 #st.title('Chat with dataset')
@@ -26,18 +26,12 @@ container = st.container()
 agent = None
 
 
-# Define safe functions
-def describe_data(query: str) -> str:
-    return str(df.describe())
 
 
-def preview_data(query: str) -> str:
-    return str(df.head())
-
-    #if query:
+#if query:
 
     # Define your tools for LangChain
-    tools = [
+    #tools = [
         #Tool(
         #  name="chat_with_dataset",
         #  func=lambda q: build_dataset_agent(df).run(q),  # dataset_query_engine must expose a .query method
@@ -59,18 +53,18 @@ def preview_data(query: str) -> str:
         #  func=preview_data,
         # description="Show first 5 rows of the dataset."
         #)
-    ]
+    #]
 
     # Initialize LLM
-    llm = OllamaLLM(model="qwen3:8b")
+    #llm = OllamaLLM(model="qwen3:8b")
 
     # Create a ReAct agent with tools
-    agent = initialize_agent(
-        tools=tools,
-        llm=llm,
-        agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,  # ReAct-like behavior
-        verbose=True
-    )
+    #agent = initialize_agent(
+#   tools=tools,
+#       llm=llm,
+#       agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,  # ReAct-like behavior
+#       verbose=True
+#    )
 
 
 #if st.button("Submit"):
@@ -84,7 +78,7 @@ def preview_data(query: str) -> str:
 #elif not query:
 #   st.warning("⚠️ Please enter a query before submitting.")
 
-#----------
+#----------RAG--------------#
 rag_page = st.Page(
     "app/rag/app.py",
     title="Retrieval Augmented Generation (RAG)",
@@ -98,29 +92,36 @@ rag_page = st.Page(
 #analysis = st.Page(
 #   "app/chartgeneration/chat_with_dataset.py", title="chat with dataset", icon=":material/quick_reference:"
 #)
+#----------AGENT CHART & SQL-------------#
 chart_generation = st.Page(
-    "chartgeneration/chart_generation.py", title="generate charts from dataset", icon=":material/quick_reference:"
+    "chartgeneration/run_charts.py", title="generate charts from dataset", icon=":material/quick_reference:"
 )
 Chat_with_db = st.Page("Db_query/front_query_db.py", title="chat with DB",)
-chat_DB = st.Page("Db_query/posgresql_connector.py", title="chat with DB p",)
-chartessai =  st.Page("chartgeneration/chartessai.py",title="chart esasai",)
+#chat_DB = st.Page("Db_query/posgresql_connector.py", title="chat with DB p",)
+#chartessai =  st.Page("chartgeneration/chartessai.py",title="chart esasai",)
 dashboard_builder = st.Page("chartgeneration/dashboard_builder.py",title="Dashboard Builder",)
-Marketing_Assistant = st.Page("assistant/AI_Agent.py", title="Marketing assistant",
-                       )
-rag_memory = st.Page("memory_test.py", title="RAG memory",)
-pg_essai = st.Page("app/rag/pgvector_essai.py", title="pg")
 
+#---------------routing--------#
+Marketing_Assistant = st.Page("assistant/AI_Agent.py", title="Agent",
+                       )
+#rag_memory = st.Page("memory_test.py", title="RAG memory",)
+#---------------------RAG & MEMORY---------------------------#
+pg_essai = st.Page("app/rag/pgvector_essai.py", title="pg only")
+#final_rag = st.Page("app/rag/merged_rag_pgvector_app.py", title="final RAG memory",)
+rag_pg = st.Page("app/rag/pg_upgraded.py", title="pg_upgraded memory with rag",)
 selected_page = st.navigation(
     {
         #"Login": [login],
-        "GenAI": [Marketing_Assistant],
-        "Tools for GenAI": [chart_generation, Chat_with_db,chat_DB],
+        "GenAI": [],
+        "Tools for GenAI": [chart_generation, Chat_with_db],
         "Agentic RAG": [
+            rag_pg,
             rag_page,
-            rag_memory,
+
             pg_essai,
+
         ],
-        "Dashboard": [chartessai,dashboard_builder,],
+        "Dashboard": [dashboard_builder,],
 
     },
     position="top",
@@ -150,3 +151,6 @@ if st.session_state.username == "":
 else:
     app_interface()
     selected_page.run()
+
+
+#################

@@ -5,6 +5,10 @@ from sentence_transformers import SentenceTransformer
 from openai import OpenAI
 import datetime
 
+
+
+
+
 # ============ CONFIG ============
 
 DB_CONFIG = {
@@ -14,10 +18,10 @@ DB_CONFIG = {
     "host": "localhost",
     "port": "5432"
 }
-
 # Embedding + LLM
 embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
 #client = OpenAI(api_key=st.secrets.get("OPENAI_API_KEY"))  # or set via env
+
 
 
 # ============ DATABASE FUNCTIONS ============
@@ -56,6 +60,9 @@ def search_memory(user_id, query, top_k=5):
     cur.close()
     conn.close()
     return results
+
+
+
 
 
 # ============ STREAMLIT UI ============

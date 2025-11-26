@@ -1,4 +1,4 @@
-from typing import Literal
+"""from typing import Literal
 from dataclasses import dataclass
 import streamlit as st
 import pandas as pd
@@ -24,7 +24,7 @@ from langchain_community.llms.ollama import Ollama
 #   st.warning("❗ Please enter a question before submitting.")
 @dataclass
 class Message:
-    """Class for keeping track of chat message."""
+    Class for keeping track of chat message.
     origin: Literal["human", "ai"]
     message: str
 
@@ -50,12 +50,14 @@ def initialize_session_state():
 
 
 initialize_session_state()
-
 llm = Ollama(model="mistral:7b-instruct-q4_K_M")
 conversation = ConversationChain(
     llm=llm,
     memory=ConversationSummaryMemory(llm=llm),
 )
+
+
+
 
 
 def on_click_callback():
@@ -81,7 +83,7 @@ prompt_placeholder = st.form("chat-form")
 
 with chat_placeholder:
     for chat in st.session_state.history:
-        div = f"""
+        div = f
         <div class="chat-row 
         {'' if chat.origin == 'ai' else 'row-reverse' }">
             <img class="chat-icon" src="app/static/{
@@ -91,7 +93,7 @@ with chat_placeholder:
                  <div class="chat-bubble
                  {'ai-bubble' if chat.origin == 'ai' else 'human-bubble'}">
                    &#8203;{chat.message}</div>
-            """
+
         st.markdown(div, unsafe_allow_html=True)
 
 with prompt_placeholder:
@@ -109,3 +111,14 @@ with prompt_placeholder:
         on_click=on_click_callback,
 
     )
+"""
+
+import streamlit as st
+from graph.frontend.connect_modal import connection_sidebar
+from graph.frontend.agent_chat import agent_chat
+
+st.set_page_config(page_title="AI DB Assistant")
+
+
+connection_sidebar()
+agent_chat()

@@ -14,6 +14,7 @@ from langchain_community.llms.ollama import Ollama
 
 from langchain.schema import HumanMessage, AIMessage
 
+from app.rag.Memory_methods import store_message, search_memory
 from app.rag.rag_methods import (
     load_doc_to_db,
 
@@ -37,9 +38,14 @@ st.set_page_config(
 # --- Header ---
 st.html("""<h2 style="text-align: center;">📚🔍 <i> Do your LLM even RAG bro? </i> 🤖💬</h2>""")
 
+
+
+
 # --- Initial Setup ---
 if "session_id" not in st.session_state:
     st.session_state.session_id = str(uuid.uuid4())
+
+
 
 if "rag_sources" not in st.session_state:
     st.session_state.rag_sources = []
@@ -49,6 +55,9 @@ if "messages" not in st.session_state:
         {"role": "user", "content": "Hello"},
         {"role": "assistant", "content": "Hi there! How can I assist you today?"}
     ]
+if "history" not in st.session_state:
+    st.session_state.history = []
+
 
 # --- Side Bar LLM API Tokens ---
 with st.sidebar:
@@ -111,6 +120,8 @@ if prompt := st.chat_input("Your message"):
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
+
+    #===============================
 
     with st.chat_message("assistant"):
         message_placeholder = st.empty()

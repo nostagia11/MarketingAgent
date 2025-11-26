@@ -11,7 +11,7 @@ from langchain_community.document_loaders import (
 )
 # pip install docx2txt, pypdf
 from langchain_community.vectorstores import Chroma
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.llms.ollama import Ollama
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.chains import create_history_aware_retriever, create_retrieval_chain
@@ -21,7 +21,7 @@ from app.rag.get_embeddings import get_embedding_function
 
 
 
-os.environ["USER_AGENT"] = "myagent"
+
 DB_DOCS_LIMIT = 10
 CHROMA_PATH= "chroma_store"
 
@@ -30,10 +30,11 @@ def stream_llm_response(llm_stream, messages):
     response_message = ""
 
     for chunk in llm_stream.stream(messages):
-        response_message += chunk.content
+        response_message += chunk
         yield chunk
 
     st.session_state.messages.append({"role": "assistant", "content": response_message})
+
 
 
 # --- Indexing Phase ---
@@ -119,7 +120,7 @@ def _split_and_load_docs(docs):
 
     else:
 
-        st.session_state.vector_db.add_documents(document_chunks,)
+        st.session_state.vector_db.add_documents(document_chunks)
 
 
 # --- Retrieval Augmented Generation (RAG) Phase ---
