@@ -34,7 +34,7 @@ DB_CONFIG = {
 # Embedding + LLM
 #embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
 
-
+user_id = st.session_state.user_id
 
 
 # ============ DATABASE FUNCTIONS ============
@@ -86,8 +86,17 @@ def query_similar_memories(user_id, query_embedding, top_k=5):
     with conn:
         with conn.cursor(cursor_factory=RealDictCursor) as cur:
             cur.execute(
-                "SELECT fact_text, fact_type, 1 - (embedding <#> %s) AS score FROM memories WHERE user_id = %s ORDER BY embedding <#> %s LIMIT %s",
-                (query_embedding, user_id, query_embedding, top_k),
+                """
+                SELECT 
+                    fact_text, 
+                    fact_type, 
+                    1 - (embedding <=> %s::vector) AS similarity
+                FROM memories
+                WHERE user_id = %s::text
+                ORDER BY embedding <=> %s::vector
+                LIMIT %s;
+                """,
+                (query_embedding, str(user_id), query_embedding, top_k),
             )
             rows = cur.fetchall()
     conn.close()
@@ -132,7 +141,9 @@ def store_facts(user_id, facts):
 def retrieve_relevant_facts(user_id, query, top_k=6):
     emb = embedding_model.encode(query).tolist()
     rows = query_similar_memories(user_id, emb, top_k=top_k)
-    return [(r["fact_text"], r.get("fact_type"), float(r.get("score", 0))) for r in rows]
+    print("ROW KEYS:", rows[0].keys())
+    return [(r["fact_text"], r.get("fact_type"), float(r.get("similarity", 0))) for r in rows]
+
 
 # Initialize DB
 init_db()

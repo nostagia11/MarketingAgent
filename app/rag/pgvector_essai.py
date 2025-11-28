@@ -92,6 +92,7 @@ if user_input:
 
     Current message: {user_input}
     Provide a natural, helpful response that uses the context when relevant.
+    Only respond from your memories , don't make up facts.
     """
 
     # Query the LLM (OpenAI example)

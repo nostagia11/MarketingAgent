@@ -84,6 +84,7 @@ rag_page = st.Page(
     title="Retrieval Augmented Generation (RAG)",
     icon=":material/database:",
 )
+
 #ragg_page = st.Page(
 #    "app/rag/rag_front.py",
 #    title="Retrieval Augmented Generation (frontRAG)",
@@ -109,6 +110,11 @@ Marketing_Assistant = st.Page("assistant/AI_Agent.py", title="Agent",
 pg_essai = st.Page("app/rag/pgvector_essai.py", title="pg only")
 #final_rag = st.Page("app/rag/merged_rag_pgvector_app.py", title="final RAG memory",)
 rag_pg = st.Page("app/rag/pg_upgraded.py", title="pg_upgraded memory with rag",)
+rag_mem = st.Page(
+    "app/rag/yes.py",
+    title="Retrieval Augmented Generation (RAG) mem",
+    icon=":material/database:",
+)
 selected_page = st.navigation(
     {
         #"Login": [login],
@@ -117,6 +123,7 @@ selected_page = st.navigation(
         "Agentic RAG": [
             rag_pg,
             rag_page,
+            rag_mem,
 
             pg_essai,
 

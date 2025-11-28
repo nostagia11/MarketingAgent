@@ -35,21 +35,15 @@ connect_to_db()  # this should set st.session_state.engine
 df = None
 
 # ---------- TRY TO LOAD DF FROM DATABASE ----------
-if st.session_state.engine is not None:
+if st.session_state.engine is not None and st.session_state.df is None:
     try:
-        st.info("Loading data from database...")
         query = "SELECT * FROM marketing_campaign LIMIT 100"
-
-        st.write("Running Query:", query)
-        st.write("Engine:", st.session_state.engine)
-
-        df = pd.read_sql(query, st.session_state.engine)
-        st.session_state.df = df
-        st.success("Data loaded from database!")
+        df_db = pd.read_sql(query, st.session_state.engine)
+        st.write(df_db)
+        st.session_state.df = df_db  # store permanently
+        st.success("Loaded data from database!")
     except Exception as e:
-        st.warning(f"Could not load from DB: {e}")
-        df = None
-
+        st.error(f"Database error: {e}")
 # ---------- FILE UPLOAD ----------
 uploaded_file = st.file_uploader("📂 Upload your dataset", type=["csv", "xls", "xlsx"])
 
@@ -64,6 +58,9 @@ if uploaded_file is not None:
 
 # ---------- PREVIEW ----------
 if df is not None:
+    st.write("DF TYPE BEFORE PANDASAI:", type(df))
+    st.write("DF SAMPLE:", df.head() if isinstance(df, pd.DataFrame) else df)
+
     with st.expander("📘 Dataframe Preview"):
         st.write(df.tail(10))
 else:
@@ -82,7 +79,7 @@ if prompt := st.chat_input("Ask something (e.g., 'Plot sales vs month')"):
     st.session_state["messages"].append({"role": "user", "content": prompt})
     #-------------------
     llm = Ollama(model="qwen3:8b")
-    pandas_tool = PandasAITool(df, llm)
+    pandas_tool = PandasAITool(df=df, llm=llm)
     tools = [
         Tool(
             name="pandas_chart_generator",
@@ -102,7 +99,7 @@ if prompt := st.chat_input("Ask something (e.g., 'Plot sales vs month')"):
     if df is not None:
         llm = Ollama(model="qwen3:8b")
 
-        pandas_tool = PandasAITool(df=df, llm=llm)
+
 
         with st.chat_message("assistant"):
             with st.spinner("🤔 Thinking..."):

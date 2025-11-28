@@ -71823,3 +71823,1304 @@ post: trace=96f4d423-ee13-429b-a520-050f6327e0ac,id=96f4d423-ee13-429b-a520-050f
 Content-Length: 108860
 API Key: lsv2_********************************************bf
 post: trace=96f4d423-ee13-429b-a520-050f6327e0ac,id=a37d2e59-9557-4e30-b301-59dfe5cd73b8; patch: trace=96f4d423-ee13-429b-a520-050f6327e0ac,id=c496f2c2-bb3f-4f30-ba40-bc850f844c1e; trace=96f4d423-ee13-429b-a520-050f6327e0ac,id=b27ae09a-fd39-4617-9079-69413136b7b0; trace=96f4d423-ee13-429b-a520-050f6327e0ac,id=96f4d423-ee13-429b-a520-050f6327e0ac
+2025-11-26 12:26:09 [WARNING] Failed to get info from https://api.smith.langchain.com: LangSmithConnectionError('Connection error caused failure to GET /info in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError(\'HTTPSConnectionPool(host=\\\'api.smith.langchain.com\\\', port=443): Max retries exceeded with url: /info (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000029AA3159E50>: Failed to resolve \\\'api.smith.langchain.com\\\' ([Errno 11001] getaddrinfo failed)"))\'))\nContent-Length: None\nAPI Key: lsv2_********************************************bf')
+2025-11-26 12:26:22 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000029AA315BDD0>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 4357
+API Key: lsv2_********************************************bf
+post: trace=8046e3cb-63ae-46b9-ac5b-ae5fbee8561d,id=8046e3cb-63ae-46b9-ac5b-ae5fbee8561d; trace=8046e3cb-63ae-46b9-ac5b-ae5fbee8561d,id=3eaf42f6-a6ba-4785-b888-6fc731834573; trace=8046e3cb-63ae-46b9-ac5b-ae5fbee8561d,id=adcd7506-7ef0-4b61-8633-997a725b6109
+2025-11-26 12:27:09 [INFO] Question: Generate a box plot of ROI grouped by Campaign Type
+2025-11-26 12:27:10 [INFO] Running PandasAI with langchain_ollama-llm LLM...
+2025-11-26 12:27:10 [INFO] Prompt ID: fdda2d59-4aea-41d6-b517-0fdaa8d1f04d
+2025-11-26 12:27:10 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-11-26 12:27:10 [INFO] Executing Step 0: ValidatePipelineInput
+2025-11-26 12:27:10 [INFO] Executing Step 1: CacheLookup
+2025-11-26 12:27:10 [INFO] Executing Step 2: PromptGeneration
+2025-11-26 12:27:10 [INFO] Using prompt: <dataframe>
+dfs[0]:200000x16
+Campaign_ID,Company,Campaign_Type,Target_Audience,Duration,Channel_Used,Conversion_Rate,Acquisition_Cost,ROI,Location,Language,Clicks,Impressions,Engagement_Score,Customer_Segment,Date
+190843,DataTech Solutions,Email,Men 18-24,30 days,YouTube,0.14,"$16,783.00",4.61,Miami,German,788,5689,5,Outdoor Adventurers,2021-12-11
+49228,TechCorp,Display,Men 25-34,60 days,Website,0.13,"$11,058.00",5.21,Los Angeles,English,322,1809,9,Health & Wellness,2021-09-25
+57140,Alpha Innovations,Social Media,Women 25-34,15 days,Email,0.1,"$6,821.00",6.66,Chicago,Mandarin,233,9357,1,Tech Enthusiasts,2021-01-13
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Generate a box plot of ROI grouped by Campaign Type
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2025-11-26 12:27:10 [INFO] Executing Step 3: CodeGenerator
+2025-11-26 12:27:22 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000029AA313EB70>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 26234
+API Key: lsv2_********************************************bf
+post: trace=8046e3cb-63ae-46b9-ac5b-ae5fbee8561d,id=a2b047ae-5120-4e62-b736-d5d66aadff02; patch: trace=8046e3cb-63ae-46b9-ac5b-ae5fbee8561d,id=3eaf42f6-a6ba-4785-b888-6fc731834573; trace=8046e3cb-63ae-46b9-ac5b-ae5fbee8561d,id=adcd7506-7ef0-4b61-8633-997a725b6109
+2025-11-26 12:27:35 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000029AA314FDA0>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 3157
+API Key: lsv2_********************************************bf
+post: trace=8046e3cb-63ae-46b9-ac5b-ae5fbee8561d,id=effae498-6611-4740-bfc0-b350caaacbf9
+2025-11-26 12:33:59 [INFO] Prompt used:
+            
+<dataframe>
+dfs[0]:200000x16
+Campaign_ID,Company,Campaign_Type,Target_Audience,Duration,Channel_Used,Conversion_Rate,Acquisition_Cost,ROI,Location,Language,Clicks,Impressions,Engagement_Score,Customer_Segment,Date
+190843,DataTech Solutions,Email,Men 18-24,30 days,YouTube,0.14,"$16,783.00",4.61,Miami,German,788,5689,5,Outdoor Adventurers,2021-12-11
+49228,TechCorp,Display,Men 25-34,60 days,Website,0.13,"$11,058.00",5.21,Los Angeles,English,322,1809,9,Health & Wellness,2021-09-25
+57140,Alpha Innovations,Social Media,Women 25-34,15 days,Email,0.1,"$6,821.00",6.66,Chicago,Mandarin,233,9357,1,Tech Enthusiasts,2021-01-13
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Generate a box plot of ROI grouped by Campaign Type
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2025-11-26 12:33:59 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Write code here
+df = dfs[0]
+plt.figure(figsize=(10, 6))
+df.boxplot(column='ROI', by='Campaign_Type', grid=False)
+plt.title('ROI Distribution by Campaign Type')
+plt.suptitle('')  # Remove the default suptitle
+plt.tight_layout()
+plt.savefig('box_plot.png')
+plt.close()
+
+# Declare result var: 
+result = {
+    "type": "plot",
+    "value": "box_plot.png"
+}
+            ```
+            
+2025-11-26 12:33:59 [INFO] Executing Step 4: CachePopulation
+2025-11-26 12:33:59 [INFO] Executing Step 5: CodeCleaning
+2025-11-26 12:33:59 [INFO] Saving charts to C:\Users\admin\PycharmProjects\MarketingAgent\exports\charts\temp_chart.png
+2025-11-26 12:33:59 [INFO] 
+Code running:
+```
+df = dfs[0]
+plt.figure(figsize=(10, 6))
+df.boxplot(column='ROI', by='Campaign_Type', grid=False)
+plt.title('ROI Distribution by Campaign Type')
+plt.suptitle('')
+plt.tight_layout()
+plt.savefig('C:/Users/admin/PycharmProjects/MarketingAgent/exports/charts/temp_chart.png')
+plt.close()
+result = {'type': 'plot', 'value': 'C:/Users/admin/PycharmProjects/MarketingAgent/exports/charts/temp_chart.png'}
+        ```
+2025-11-26 12:33:59 [INFO] Executing Step 6: CodeExecution
+2025-11-26 12:34:00 [ERROR] Failed with error: Traceback (most recent call last):
+  File "C:\Users\admin\AppData\Roaming\Python\Python312\site-packages\pandasai\pipelines\chat\code_execution.py", line 85, in execute
+    result = self.execute_code(code_to_run, code_context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\AppData\Roaming\Python\Python312\site-packages\pandasai\pipelines\chat\code_execution.py", line 174, in execute_code
+    exec(code, environment)
+  File "<string>", line 5, in <module>
+  File "C:\Users\admin\AppData\Roaming\Python\Python312\site-packages\pandasai\safe_libs\restricted_matplotlib.py", line 75, in __getattr__
+    raise AttributeError(f"'{name}' is not allowed in RestrictedMatplotlib")
+AttributeError: 'suptitle' is not allowed in RestrictedMatplotlib
+
+2025-11-26 12:34:00 [ERROR] Pipeline failed on step 6: 'suptitle' is not allowed in RestrictedMatplotlib
+2025-11-26 12:34:12 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000029A995FC3E0>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 175136
+API Key: lsv2_********************************************bf
+patch: trace=8046e3cb-63ae-46b9-ac5b-ae5fbee8561d,id=effae498-6611-4740-bfc0-b350caaacbf9
+2025-11-26 12:34:25 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000029AA3164A40>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 6954
+API Key: lsv2_********************************************bf
+post: trace=8046e3cb-63ae-46b9-ac5b-ae5fbee8561d,id=1f6b8126-6b42-4dab-944a-fe667ee13c4f; trace=8046e3cb-63ae-46b9-ac5b-ae5fbee8561d,id=fc7aa448-81b2-4fa2-b7e0-2341d71ec048; patch: trace=8046e3cb-63ae-46b9-ac5b-ae5fbee8561d,id=a2b047ae-5120-4e62-b736-d5d66aadff02
+2025-11-26 12:37:10 [INFO] Question: generate a 'Box plot of ROI by Campaign Type' 
+2025-11-26 12:37:10 [INFO] Running PandasAI with langchain_ollama-llm LLM...
+2025-11-26 12:37:10 [INFO] Prompt ID: 83786e31-ba5d-4868-a334-4751efb4f028
+2025-11-26 12:37:10 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-11-26 12:37:10 [INFO] Executing Step 0: ValidatePipelineInput
+2025-11-26 12:37:10 [INFO] Executing Step 1: CacheLookup
+2025-11-26 12:37:10 [INFO] Executing Step 2: PromptGeneration
+2025-11-26 12:37:10 [INFO] Using prompt: <dataframe>
+dfs[0]:200000x16
+Campaign_ID,Company,Campaign_Type,Target_Audience,Duration,Channel_Used,Conversion_Rate,Acquisition_Cost,ROI,Location,Language,Clicks,Impressions,Engagement_Score,Customer_Segment,Date
+192537,NexGen Systems,Display,All Ages,15 days,Google Ads,0.04,"$10,849.00",5.01,Los Angeles,Mandarin,813,6819,10,Foodies,2021-07-28
+130026,Alpha Innovations,Search,Men 18-24,60 days,Website,0.15,"$7,117.00",7.03,Miami,English,770,8074,3,Tech Enthusiasts,2021-09-03
+189135,TechCorp,Email,Women 25-34,30 days,Email,0.13,"$12,564.00",6.37,Chicago,French,504,6063,1,Health & Wellness,2021-12-23
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ generate a 'Box plot of ROI by Campaign Type' 
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2025-11-26 12:37:10 [INFO] Executing Step 3: CodeGenerator
+2025-11-26 12:37:22 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000029AA313E4B0>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 85609
+API Key: lsv2_********************************************bf
+patch: trace=8046e3cb-63ae-46b9-ac5b-ae5fbee8561d,id=1f6b8126-6b42-4dab-944a-fe667ee13c4f; trace=8046e3cb-63ae-46b9-ac5b-ae5fbee8561d,id=fc7aa448-81b2-4fa2-b7e0-2341d71ec048; trace=8046e3cb-63ae-46b9-ac5b-ae5fbee8561d,id=8046e3cb-63ae-46b9-ac5b-ae5fbee8561d
+2025-11-26 12:37:35 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000029AA313C2C0>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 2984
+API Key: lsv2_********************************************bf
+post: trace=07668073-6788-4caa-8106-e940a4de96bf,id=07668073-6788-4caa-8106-e940a4de96bf
+2025-11-26 12:44:17 [INFO] Prompt used:
+            
+<dataframe>
+dfs[0]:200000x16
+Campaign_ID,Company,Campaign_Type,Target_Audience,Duration,Channel_Used,Conversion_Rate,Acquisition_Cost,ROI,Location,Language,Clicks,Impressions,Engagement_Score,Customer_Segment,Date
+192537,NexGen Systems,Display,All Ages,15 days,Google Ads,0.04,"$10,849.00",5.01,Los Angeles,Mandarin,813,6819,10,Foodies,2021-07-28
+130026,Alpha Innovations,Search,Men 18-24,60 days,Website,0.15,"$7,117.00",7.03,Miami,English,770,8074,3,Tech Enthusiasts,2021-09-03
+189135,TechCorp,Email,Women 25-34,30 days,Email,0.13,"$12,564.00",6.37,Chicago,French,504,6063,1,Health & Wellness,2021-12-23
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ generate a 'Box plot of ROI by Campaign Type' 
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2025-11-26 12:44:17 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Write code here
+df = dfs[0]
+roi_data = df.groupby('Campaign_Type')['ROI'].apply(list)
+plt.figure(figsize=(10, 6))
+plt.boxplot(roi_data.values, labels=roi_data.index, patch_artist=True)
+plt.title('Box plot of ROI by Campaign Type')
+plt.ylabel('ROI')
+plt.grid(True)
+plt.savefig('box_plot.png')
+plt.close()
+
+# Declare result var: 
+result = {
+    "type": "plot",
+    "value": "box_plot.png"
+}
+            ```
+            
+2025-11-26 12:44:17 [INFO] Executing Step 4: CachePopulation
+2025-11-26 12:44:17 [INFO] Executing Step 5: CodeCleaning
+2025-11-26 12:44:17 [INFO] Saving charts to C:\Users\admin\PycharmProjects\MarketingAgent\exports\charts\temp_chart.png
+2025-11-26 12:44:17 [INFO] 
+Code running:
+```
+df = dfs[0]
+roi_data = df.groupby('Campaign_Type')['ROI'].apply(list)
+plt.figure(figsize=(10, 6))
+plt.boxplot(roi_data.values, labels=roi_data.index, patch_artist=True)
+plt.title('Box plot of ROI by Campaign Type')
+plt.ylabel('ROI')
+plt.grid(True)
+plt.savefig('C:/Users/admin/PycharmProjects/MarketingAgent/exports/charts/temp_chart.png')
+plt.close()
+result = {'type': 'plot', 'value': 'C:/Users/admin/PycharmProjects/MarketingAgent/exports/charts/temp_chart.png'}
+        ```
+2025-11-26 12:44:17 [INFO] Executing Step 6: CodeExecution
+2025-11-26 12:44:18 [INFO] Executing Step 7: ResultValidation
+2025-11-26 12:44:18 [INFO] Answer: {'type': 'plot', 'value': 'C:/Users/admin/PycharmProjects/MarketingAgent/exports/charts/temp_chart.png'}
+2025-11-26 12:44:18 [INFO] Executing Step 8: ResultParsing
+2025-11-26 12:44:30 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000029A995FCF80>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 186884
+API Key: lsv2_********************************************bf
+patch: trace=07668073-6788-4caa-8106-e940a4de96bf,id=07668073-6788-4caa-8106-e940a4de96bf
+2025-11-27 12:19:19 [WARNING] Failed to get info from https://api.smith.langchain.com: LangSmithConnectionError('Connection error caused failure to GET /info in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError(\'HTTPSConnectionPool(host=\\\'api.smith.langchain.com\\\', port=443): Max retries exceeded with url: /info (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F37AA31D0>: Failed to resolve \\\'api.smith.langchain.com\\\' ([Errno 11001] getaddrinfo failed)"))\'))\nContent-Length: None\nAPI Key: lsv2_********************************************bf')
+2025-11-27 12:19:32 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F6C838C20>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 4363
+API Key: lsv2_********************************************bf
+post: trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef; trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=cc47bf6a-6e81-4d18-bf5b-47ebb9f605fe; trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=5370e9ef-df66-4c9f-a9f8-ee8f6c3b635a
+2025-11-27 12:20:30 [INFO] Question: Generate a bar plot showing the count of each Customer Segment"
+
+2025-11-27 12:20:30 [INFO] Running PandasAI with langchain_ollama-llm LLM...
+2025-11-27 12:20:30 [INFO] Prompt ID: 9b424bf9-387f-4312-b3bf-c6d939e96018
+2025-11-27 12:20:30 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-11-27 12:20:31 [INFO] Executing Step 0: ValidatePipelineInput
+2025-11-27 12:20:31 [INFO] Executing Step 1: CacheLookup
+2025-11-27 12:20:31 [INFO] Executing Step 2: PromptGeneration
+2025-11-27 12:20:31 [INFO] Using prompt: <dataframe>
+dfs[0]:200000x16
+Campaign_ID,Company,Campaign_Type,Target_Audience,Duration,Channel_Used,Conversion_Rate,Acquisition_Cost,ROI,Location,Language,Clicks,Impressions,Engagement_Score,Customer_Segment,Date
+110920,TechCorp,Email,Women 35-44,15 days,Facebook,0.01,"$15,408.00",4.2,Los Angeles,English,677,4113,7,Fashionistas,2021-02-01
+141128,DataTech Solutions,Social Media,Men 18-24,45 days,Instagram,0.05,"$14,679.00",7.12,New York,French,363,6652,8,Health & Wellness,2021-09-07
+21914,Alpha Innovations,Influencer,Women 25-34,60 days,Email,0.11,"$9,412.00",4.82,Houston,German,477,6791,3,Foodies,2021-03-30
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Generate a bar plot showing the count of each Customer Segment"
+
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2025-11-27 12:20:31 [INFO] Executing Step 3: CodeGenerator
+2025-11-27 12:20:43 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F376FD910>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 31237
+API Key: lsv2_********************************************bf
+post: trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=5baf9566-c417-4130-988b-74a0bd7180de; patch: trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=cc47bf6a-6e81-4d18-bf5b-47ebb9f605fe; trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=5370e9ef-df66-4c9f-a9f8-ee8f6c3b635a
+2025-11-27 12:20:56 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F376FF920>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 3166
+API Key: lsv2_********************************************bf
+post: trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=415ecc99-a369-430d-94e1-00531e9dc821
+2025-11-27 12:27:07 [INFO] Prompt used:
+            
+<dataframe>
+dfs[0]:200000x16
+Campaign_ID,Company,Campaign_Type,Target_Audience,Duration,Channel_Used,Conversion_Rate,Acquisition_Cost,ROI,Location,Language,Clicks,Impressions,Engagement_Score,Customer_Segment,Date
+110920,TechCorp,Email,Women 35-44,15 days,Facebook,0.01,"$15,408.00",4.2,Los Angeles,English,677,4113,7,Fashionistas,2021-02-01
+141128,DataTech Solutions,Social Media,Men 18-24,45 days,Instagram,0.05,"$14,679.00",7.12,New York,French,363,6652,8,Health & Wellness,2021-09-07
+21914,Alpha Innovations,Influencer,Women 25-34,60 days,Email,0.11,"$9,412.00",4.82,Houston,German,477,6791,3,Foodies,2021-03-30
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Generate a bar plot showing the count of each Customer Segment"
+
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2025-11-27 12:27:07 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Write code here
+segment_counts = dfs[0]['Customer_Segment'].value_counts()
+plt.figure(figsize=(10, 6))
+segment_counts.plot(kind='bar')
+plt.title('Count of Each Customer Segment')
+plt.xlabel('Customer Segment')
+plt.ylabel('Count')
+plt.savefig('customer_segments_bar_plot.png')
+plt.close()
+
+result = {
+    "type": "plot",
+    "value": "customer_segments_bar_plot.png"
+}
+            ```
+            
+2025-11-27 12:27:07 [INFO] Executing Step 4: CachePopulation
+2025-11-27 12:27:07 [INFO] Executing Step 5: CodeCleaning
+2025-11-27 12:27:07 [INFO] Saving charts to C:\Users\admin\PycharmProjects\MarketingAgent\exports\charts\temp_chart.png
+2025-11-27 12:27:07 [INFO] 
+Code running:
+```
+segment_counts = dfs[0]['Customer_Segment'].value_counts()
+plt.figure(figsize=(10, 6))
+segment_counts.plot(kind='bar')
+plt.title('Count of Each Customer Segment')
+plt.xlabel('Customer Segment')
+plt.ylabel('Count')
+plt.savefig('C:/Users/admin/PycharmProjects/MarketingAgent/exports/charts/temp_chart.png')
+plt.close()
+result = {'type': 'plot', 'value': 'C:/Users/admin/PycharmProjects/MarketingAgent/exports/charts/temp_chart.png'}
+        ```
+2025-11-27 12:27:07 [INFO] Executing Step 6: CodeExecution
+2025-11-27 12:27:07 [INFO] Executing Step 7: ResultValidation
+2025-11-27 12:27:07 [INFO] Answer: {'type': 'plot', 'value': 'C:/Users/admin/PycharmProjects/MarketingAgent/exports/charts/temp_chart.png'}
+2025-11-27 12:27:07 [INFO] Executing Step 8: ResultParsing
+2025-11-27 12:27:20 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F37E08C50>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 171898
+API Key: lsv2_********************************************bf
+patch: trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=415ecc99-a369-430d-94e1-00531e9dc821
+2025-11-27 12:27:33 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F37E0A030>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 7061
+API Key: lsv2_********************************************bf
+post: trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=69ec0218-ba33-43e7-92f6-6ae086099d19; trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=de7fe977-641b-4cd4-b01a-05d96d71bc1d; patch: trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=5baf9566-c417-4130-988b-74a0bd7180de
+2025-11-27 12:28:14 [INFO] Question: Count the number of customers in each segment and plot as a bar chart"
+
+2025-11-27 12:28:14 [INFO] Running PandasAI with langchain_ollama-llm LLM...
+2025-11-27 12:28:14 [INFO] Prompt ID: 6d763fc8-cb5c-4b55-be3a-21628ccdf7e0
+2025-11-27 12:28:14 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-11-27 12:28:14 [INFO] Executing Step 0: ValidatePipelineInput
+2025-11-27 12:28:14 [INFO] Executing Step 1: CacheLookup
+2025-11-27 12:28:14 [INFO] Executing Step 2: PromptGeneration
+2025-11-27 12:28:14 [INFO] Using prompt: <dataframe>
+dfs[0]:200000x16
+Campaign_ID,Company,Campaign_Type,Target_Audience,Duration,Channel_Used,Conversion_Rate,Acquisition_Cost,ROI,Location,Language,Clicks,Impressions,Engagement_Score,Customer_Segment,Date
+110920,TechCorp,Email,Women 35-44,15 days,Facebook,0.01,"$15,408.00",4.2,Los Angeles,English,677,4113,7,Fashionistas,2021-02-01
+141128,DataTech Solutions,Social Media,Men 18-24,45 days,Instagram,0.05,"$14,679.00",7.12,New York,French,363,6652,8,Health & Wellness,2021-09-07
+21914,Alpha Innovations,Influencer,Women 25-34,60 days,Email,0.11,"$9,412.00",4.82,Houston,German,477,6791,3,Foodies,2021-03-30
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Count the number of customers in each segment and plot as a bar chart"
+
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2025-11-27 12:28:14 [INFO] Executing Step 3: CodeGenerator
+2025-11-27 12:28:27 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F3796F080>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 22257
+API Key: lsv2_********************************************bf
+post: trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=a69cf11c-f762-448b-983f-a5253d947133; patch: trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=69ec0218-ba33-43e7-92f6-6ae086099d19; trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=de7fe977-641b-4cd4-b01a-05d96d71bc1d
+2025-11-27 12:28:39 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F37988A40>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 3317
+API Key: lsv2_********************************************bf
+post: trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=70d6dc2f-c51c-4f1c-b9d5-f8c401c8e69a
+2025-11-27 12:38:05 [INFO] Prompt used:
+            
+
+### PREVIOUS CONVERSATION
+### QUERY
+ Generate a bar plot showing the count of each Customer Segment"
+
+### ANSWER
+ Check it out: <plot>
+<dataframe>
+dfs[0]:200000x16
+Campaign_ID,Company,Campaign_Type,Target_Audience,Duration,Channel_Used,Conversion_Rate,Acquisition_Cost,ROI,Location,Language,Clicks,Impressions,Engagement_Score,Customer_Segment,Date
+110920,TechCorp,Email,Women 35-44,15 days,Facebook,0.01,"$15,408.00",4.2,Los Angeles,English,677,4113,7,Fashionistas,2021-02-01
+141128,DataTech Solutions,Social Media,Men 18-24,45 days,Instagram,0.05,"$14,679.00",7.12,New York,French,363,6652,8,Health & Wellness,2021-09-07
+21914,Alpha Innovations,Influencer,Women 25-34,60 days,Email,0.11,"$9,412.00",4.82,Houston,German,477,6791,3,Foodies,2021-03-30
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Count the number of customers in each segment and plot as a bar chart"
+
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2025-11-27 12:38:05 [INFO] Code generated:
+            ```
+            import pandas as pd
+import matplotlib.pyplot as plt
+
+# Combine all DataFrames to aggregate customer segments
+combined_df = pd.concat(dfs, ignore_index=True)
+
+# Count the number of customers in each segment
+segment_counts = combined_df['Customer_Segment'].value_counts().reset_index()
+segment_counts.columns = ['Customer_Segment', 'Count']
+
+# Plot the bar chart
+plt.figure(figsize=(10, 6))
+plt.bar(segment_counts['Customer_Segment'], segment_counts['Count'])
+plt.xlabel('Customer Segment')
+plt.ylabel('Number of Customers')
+plt.title('Customer Segment Count')
+plt.savefig('temp_chart.png')
+plt.close()
+
+# Declare result variable
+result = {"type": "plot", "value": "temp_chart.png"}
+            ```
+            
+2025-11-27 12:38:05 [INFO] Executing Step 4: CachePopulation
+2025-11-27 12:38:05 [INFO] Executing Step 5: CodeCleaning
+2025-11-27 12:38:05 [INFO] Saving charts to C:\Users\admin\PycharmProjects\MarketingAgent\exports\charts\temp_chart.png
+2025-11-27 12:38:05 [INFO] 
+Code running:
+```
+combined_df = pd.concat(dfs, ignore_index=True)
+segment_counts = combined_df['Customer_Segment'].value_counts().reset_index()
+segment_counts.columns = ['Customer_Segment', 'Count']
+plt.figure(figsize=(10, 6))
+plt.bar(segment_counts['Customer_Segment'], segment_counts['Count'])
+plt.xlabel('Customer Segment')
+plt.ylabel('Number of Customers')
+plt.title('Customer Segment Count')
+plt.savefig('C:/Users/admin/PycharmProjects/MarketingAgent/exports/charts/temp_chart.png')
+plt.close()
+result = {'type': 'plot', 'value': 'C:/Users/admin/PycharmProjects/MarketingAgent/exports/charts/temp_chart.png'}
+        ```
+2025-11-27 12:38:05 [INFO] Executing Step 6: CodeExecution
+2025-11-27 12:38:05 [INFO] Executing Step 7: ResultValidation
+2025-11-27 12:38:05 [INFO] Answer: {'type': 'plot', 'value': 'C:/Users/admin/PycharmProjects/MarketingAgent/exports/charts/temp_chart.png'}
+2025-11-27 12:38:05 [INFO] Executing Step 8: ResultParsing
+2025-11-27 12:38:18 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F378D6BD0>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 258432
+API Key: lsv2_********************************************bf
+patch: trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=70d6dc2f-c51c-4f1c-b9d5-f8c401c8e69a
+2025-11-27 12:38:30 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F378D5820>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 8675
+API Key: lsv2_********************************************bf
+post: trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=c1f96d7d-b0c6-4344-b961-cf9471c56947; trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=6834ec1e-2d00-423a-a447-f0b00587c6a6; patch: trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=a69cf11c-f762-448b-983f-a5253d947133
+2025-11-27 12:39:25 [INFO] Question: Generate bar plot for Customer Segment counts"
+
+2025-11-27 12:39:25 [INFO] Running PandasAI with langchain_ollama-llm LLM...
+2025-11-27 12:39:25 [INFO] Prompt ID: 56c4f665-e751-4449-b53e-5eef47e84073
+2025-11-27 12:39:25 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-11-27 12:39:25 [INFO] Executing Step 0: ValidatePipelineInput
+2025-11-27 12:39:25 [INFO] Executing Step 1: CacheLookup
+2025-11-27 12:39:25 [INFO] Executing Step 2: PromptGeneration
+2025-11-27 12:39:25 [INFO] Using prompt: <dataframe>
+dfs[0]:200000x16
+Campaign_ID,Company,Campaign_Type,Target_Audience,Duration,Channel_Used,Conversion_Rate,Acquisition_Cost,ROI,Location,Language,Clicks,Impressions,Engagement_Score,Customer_Segment,Date
+110920,TechCorp,Email,Women 35-44,15 days,Facebook,0.01,"$15,408.00",4.2,Los Angeles,English,677,4113,7,Fashionistas,2021-02-01
+141128,DataTech Solutions,Social Media,Men 18-24,45 days,Instagram,0.05,"$14,679.00",7.12,New York,French,363,6652,8,Health & Wellness,2021-09-07
+21914,Alpha Innovations,Influencer,Women 25-34,60 days,Email,0.11,"$9,412.00",4.82,Houston,German,477,6791,3,Foodies,2021-03-30
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Generate bar plot for Customer Segment counts"
+
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2025-11-27 12:39:25 [INFO] Executing Step 3: CodeGenerator
+2025-11-27 12:39:38 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F378E4770>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 27378
+API Key: lsv2_********************************************bf
+post: trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=cfd47b85-d4c5-422e-8e6c-5d0720f3a836; trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=b1c285f3-9020-4255-9ae7-e7ad48177b80; patch: trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=c1f96d7d-b0c6-4344-b961-cf9471c56947; trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=6834ec1e-2d00-423a-a447-f0b00587c6a6
+2025-11-27 12:43:36 [INFO] Prompt used:
+            
+
+### PREVIOUS CONVERSATION
+### QUERY
+ Generate a bar plot showing the count of each Customer Segment"
+
+### ANSWER
+ Check it out: <plot>
+### QUERY
+ Count the number of customers in each segment and plot as a bar chart"
+
+### ANSWER
+ Check it out: <plot>
+<dataframe>
+dfs[0]:200000x16
+Campaign_ID,Company,Campaign_Type,Target_Audience,Duration,Channel_Used,Conversion_Rate,Acquisition_Cost,ROI,Location,Language,Clicks,Impressions,Engagement_Score,Customer_Segment,Date
+110920,TechCorp,Email,Women 35-44,15 days,Facebook,0.01,"$15,408.00",4.2,Los Angeles,English,677,4113,7,Fashionistas,2021-02-01
+141128,DataTech Solutions,Social Media,Men 18-24,45 days,Instagram,0.05,"$14,679.00",7.12,New York,French,363,6652,8,Health & Wellness,2021-09-07
+21914,Alpha Innovations,Influencer,Women 25-34,60 days,Email,0.11,"$9,412.00",4.82,Houston,German,477,6791,3,Foodies,2021-03-30
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Generate bar plot for Customer Segment counts"
+
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2025-11-27 12:43:36 [INFO] Code generated:
+            ```
+            import pandas as pd
+import matplotlib.pyplot as plt
+
+# Combine all DataFrames in the list
+combined_df = pd.concat(dfs, ignore_index=True)
+
+# Count occurrences of each Customer Segment
+segment_counts = combined_df['Customer_Segment'].value_counts().reset_index()
+segment_counts.columns = ['Customer_Segment', 'Count']
+
+# Create bar plot
+plt.figure(figsize=(10, 6))
+plt.bar(segment_counts['Customer_Segment'], segment_counts['Count'])
+plt.xlabel('Customer Segment')
+plt.ylabel('Count')
+plt.title('Customer Segment Counts')
+plt.savefig('customer_segment_counts.png')
+plt.close()
+
+# Declare result
+result = {
+    "type": "plot",
+    "value": "customer_segment_counts.png"
+}
+            ```
+            
+2025-11-27 12:43:36 [INFO] Executing Step 4: CachePopulation
+2025-11-27 12:43:36 [INFO] Executing Step 5: CodeCleaning
+2025-11-27 12:43:36 [INFO] Saving charts to C:\Users\admin\PycharmProjects\MarketingAgent\exports\charts\temp_chart.png
+2025-11-27 12:43:36 [INFO] 
+Code running:
+```
+combined_df = pd.concat(dfs, ignore_index=True)
+segment_counts = combined_df['Customer_Segment'].value_counts().reset_index()
+segment_counts.columns = ['Customer_Segment', 'Count']
+plt.figure(figsize=(10, 6))
+plt.bar(segment_counts['Customer_Segment'], segment_counts['Count'])
+plt.xlabel('Customer Segment')
+plt.ylabel('Count')
+plt.title('Customer Segment Counts')
+plt.savefig('C:/Users/admin/PycharmProjects/MarketingAgent/exports/charts/temp_chart.png')
+plt.close()
+result = {'type': 'plot', 'value': 'C:/Users/admin/PycharmProjects/MarketingAgent/exports/charts/temp_chart.png'}
+        ```
+2025-11-27 12:43:36 [INFO] Executing Step 6: CodeExecution
+2025-11-27 12:43:36 [INFO] Executing Step 7: ResultValidation
+2025-11-27 12:43:36 [INFO] Answer: {'type': 'plot', 'value': 'C:/Users/admin/PycharmProjects/MarketingAgent/exports/charts/temp_chart.png'}
+2025-11-27 12:43:36 [INFO] Executing Step 8: ResultParsing
+2025-11-27 12:43:49 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F387FF350>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 110942
+API Key: lsv2_********************************************bf
+patch: trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=b1c285f3-9020-4255-9ae7-e7ad48177b80
+2025-11-27 12:44:01 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F378B3C80>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 10333
+API Key: lsv2_********************************************bf
+post: trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=b50b20d7-19fb-4ccb-97e5-eb3c63b5ca5e; trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=f9936a7c-1a9d-43ae-a2fb-b9736316abd7; patch: trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=cfd47b85-d4c5-422e-8e6c-5d0720f3a836
+2025-11-27 12:44:56 [INFO] Question: Count Customer Segment and plot as bar"
+
+2025-11-27 12:44:56 [INFO] Running PandasAI with langchain_ollama-llm LLM...
+2025-11-27 12:44:56 [INFO] Prompt ID: 02d7b8ec-6eea-4516-bcd5-bb9b6aa768f0
+2025-11-27 12:44:56 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-11-27 12:44:56 [INFO] Executing Step 0: ValidatePipelineInput
+2025-11-27 12:44:56 [INFO] Executing Step 1: CacheLookup
+2025-11-27 12:44:56 [INFO] Executing Step 2: PromptGeneration
+2025-11-27 12:44:56 [INFO] Using prompt: <dataframe>
+dfs[0]:200000x16
+Campaign_ID,Company,Campaign_Type,Target_Audience,Duration,Channel_Used,Conversion_Rate,Acquisition_Cost,ROI,Location,Language,Clicks,Impressions,Engagement_Score,Customer_Segment,Date
+110920,TechCorp,Email,Women 35-44,15 days,Facebook,0.01,"$15,408.00",4.2,Los Angeles,English,677,4113,7,Fashionistas,2021-02-01
+141128,DataTech Solutions,Social Media,Men 18-24,45 days,Instagram,0.05,"$14,679.00",7.12,New York,French,363,6652,8,Health & Wellness,2021-09-07
+21914,Alpha Innovations,Influencer,Women 25-34,60 days,Email,0.11,"$9,412.00",4.82,Houston,German,477,6791,3,Foodies,2021-03-30
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Count Customer Segment and plot as bar"
+
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2025-11-27 12:44:56 [INFO] Executing Step 3: CodeGenerator
+2025-11-27 12:45:09 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F387FF230>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 22070
+API Key: lsv2_********************************************bf
+post: trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=2a9cdbfd-eac4-46b6-8dd4-bdfe67f54609; patch: trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=b50b20d7-19fb-4ccb-97e5-eb3c63b5ca5e; trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=f9936a7c-1a9d-43ae-a2fb-b9736316abd7
+2025-11-27 12:45:21 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F388535F0>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 3506
+API Key: lsv2_********************************************bf
+post: trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=37c5cb27-4412-45c5-a382-43a1ea4f18a0
+2025-11-27 12:47:54 [INFO] Prompt used:
+            
+
+### PREVIOUS CONVERSATION
+### QUERY
+ Generate a bar plot showing the count of each Customer Segment"
+
+### ANSWER
+ Check it out: <plot>
+### QUERY
+ Count the number of customers in each segment and plot as a bar chart"
+
+### ANSWER
+ Check it out: <plot>
+### QUERY
+ Generate bar plot for Customer Segment counts"
+
+### ANSWER
+ Check it out: <plot>
+<dataframe>
+dfs[0]:200000x16
+Campaign_ID,Company,Campaign_Type,Target_Audience,Duration,Channel_Used,Conversion_Rate,Acquisition_Cost,ROI,Location,Language,Clicks,Impressions,Engagement_Score,Customer_Segment,Date
+110920,TechCorp,Email,Women 35-44,15 days,Facebook,0.01,"$15,408.00",4.2,Los Angeles,English,677,4113,7,Fashionistas,2021-02-01
+141128,DataTech Solutions,Social Media,Men 18-24,45 days,Instagram,0.05,"$14,679.00",7.12,New York,French,363,6652,8,Health & Wellness,2021-09-07
+21914,Alpha Innovations,Influencer,Women 25-34,60 days,Email,0.11,"$9,412.00",4.82,Houston,German,477,6791,3,Foodies,2021-03-30
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ Count Customer Segment and plot as bar"
+
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2025-11-27 12:47:54 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Write code here
+df = dfs[0]
+segment_counts = df['Customer_Segment'].value_counts().reset_index()
+segment_counts.columns = ['Customer_Segment', 'Count']
+
+plt.figure(figsize=(10, 6))
+plt.bar(segment_counts['Customer_Segment'], segment_counts['Count'], color='skyblue')
+plt.xlabel('Customer Segment')
+plt.ylabel('Count')
+plt.title('Customer Segment Counts')
+plt.savefig('temp_chart.png')
+plt.close()
+
+# Declare result var: 
+result = { "type": "plot", "value": "temp_chart.png" }
+            ```
+            
+2025-11-27 12:47:54 [INFO] Executing Step 4: CachePopulation
+2025-11-27 12:47:54 [INFO] Executing Step 5: CodeCleaning
+2025-11-27 12:47:54 [INFO] Saving charts to C:\Users\admin\PycharmProjects\MarketingAgent\exports\charts\temp_chart.png
+2025-11-27 12:47:54 [INFO] 
+Code running:
+```
+df = dfs[0]
+segment_counts = df['Customer_Segment'].value_counts().reset_index()
+segment_counts.columns = ['Customer_Segment', 'Count']
+plt.figure(figsize=(10, 6))
+plt.bar(segment_counts['Customer_Segment'], segment_counts['Count'], color='skyblue')
+plt.xlabel('Customer Segment')
+plt.ylabel('Count')
+plt.title('Customer Segment Counts')
+plt.savefig('C:/Users/admin/PycharmProjects/MarketingAgent/exports/charts/temp_chart.png')
+plt.close()
+result = {'type': 'plot', 'value': 'C:/Users/admin/PycharmProjects/MarketingAgent/exports/charts/temp_chart.png'}
+        ```
+2025-11-27 12:47:54 [INFO] Executing Step 6: CodeExecution
+2025-11-27 12:47:54 [INFO] Executing Step 7: ResultValidation
+2025-11-27 12:47:54 [INFO] Answer: {'type': 'plot', 'value': 'C:/Users/admin/PycharmProjects/MarketingAgent/exports/charts/temp_chart.png'}
+2025-11-27 12:47:54 [INFO] Executing Step 8: ResultParsing
+2025-11-27 12:48:06 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F37F9B650>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 75457
+API Key: lsv2_********************************************bf
+patch: trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=37c5cb27-4412-45c5-a382-43a1ea4f18a0
+2025-11-27 12:48:19 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F37F98B00>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 11789
+API Key: lsv2_********************************************bf
+post: trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=e93508d4-8f14-4904-9936-fc6f86e1ac7d; trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=b276e97b-ff24-4837-9b99-9358c28132e7; patch: trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=2a9cdbfd-eac4-46b6-8dd4-bdfe67f54609
+2025-11-27 12:49:29 [INFO] Question: generate a 'Bar plot of Customer Segment counts'
+2025-11-27 12:49:29 [INFO] Running PandasAI with langchain_ollama-llm LLM...
+2025-11-27 12:49:29 [INFO] Prompt ID: a6f16264-b5fe-43a3-a37e-f4f9b5b4b8e6
+2025-11-27 12:49:29 [INFO] Executing Pipeline: GenerateChatPipeline
+2025-11-27 12:49:29 [INFO] Executing Step 0: ValidatePipelineInput
+2025-11-27 12:49:29 [INFO] Executing Step 1: CacheLookup
+2025-11-27 12:49:29 [INFO] Executing Step 2: PromptGeneration
+2025-11-27 12:49:29 [INFO] Using prompt: <dataframe>
+dfs[0]:200000x16
+Campaign_ID,Company,Campaign_Type,Target_Audience,Duration,Channel_Used,Conversion_Rate,Acquisition_Cost,ROI,Location,Language,Clicks,Impressions,Engagement_Score,Customer_Segment,Date
+110920,TechCorp,Email,Women 35-44,15 days,Facebook,0.01,"$15,408.00",4.2,Los Angeles,English,677,4113,7,Fashionistas,2021-02-01
+141128,DataTech Solutions,Social Media,Men 18-24,45 days,Instagram,0.05,"$14,679.00",7.12,New York,French,363,6652,8,Health & Wellness,2021-09-07
+21914,Alpha Innovations,Influencer,Women 25-34,60 days,Email,0.11,"$9,412.00",4.82,Houston,German,477,6791,3,Foodies,2021-03-30
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ generate a 'Bar plot of Customer Segment counts'
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+2025-11-27 12:49:29 [INFO] Executing Step 3: CodeGenerator
+2025-11-27 12:49:42 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F37A84B90>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 29237
+API Key: lsv2_********************************************bf
+post: trace=5d260306-e6bd-45c9-888b-3eb897085748,id=5d260306-e6bd-45c9-888b-3eb897085748; patch: trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=e93508d4-8f14-4904-9936-fc6f86e1ac7d; trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=b276e97b-ff24-4837-9b99-9358c28132e7; trace=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef,id=96f17dba-b0f5-45a9-9cf9-ea8539cfb5ef
+2025-11-27 12:54:08 [INFO] Prompt used:
+            
+
+### PREVIOUS CONVERSATION
+### QUERY
+ Generate a bar plot showing the count of each Customer Segment"
+
+### ANSWER
+ Check it out: <plot>
+### QUERY
+ Count the number of customers in each segment and plot as a bar chart"
+
+### ANSWER
+ Check it out: <plot>
+### QUERY
+ Generate bar plot for Customer Segment counts"
+
+### ANSWER
+ Check it out: <plot>
+### QUERY
+ Count Customer Segment and plot as bar"
+
+### ANSWER
+ Check it out: <plot>
+<dataframe>
+dfs[0]:200000x16
+Campaign_ID,Company,Campaign_Type,Target_Audience,Duration,Channel_Used,Conversion_Rate,Acquisition_Cost,ROI,Location,Language,Clicks,Impressions,Engagement_Score,Customer_Segment,Date
+110920,TechCorp,Email,Women 35-44,15 days,Facebook,0.01,"$15,408.00",4.2,Los Angeles,English,677,4113,7,Fashionistas,2021-02-01
+141128,DataTech Solutions,Social Media,Men 18-24,45 days,Instagram,0.05,"$14,679.00",7.12,New York,French,363,6652,8,Health & Wellness,2021-09-07
+21914,Alpha Innovations,Influencer,Women 25-34,60 days,Email,0.11,"$9,412.00",4.82,Houston,German,477,6791,3,Foodies,2021-03-30
+</dataframe>
+
+
+
+
+Update this initial code:
+```python
+# TODO: import the required dependencies
+import pandas as pd
+
+# Write code here
+
+# Declare result var: 
+type (possible values "string", "number", "dataframe", "plot"). Examples: { "type": "string", "value": f"The highest salary is {highest_salary}." } or { "type": "number", "value": 125 } or { "type": "dataframe", "value": pd.DataFrame({...}) } or { "type": "plot", "value": "temp_chart.png" }
+
+```
+
+
+
+### QUERY
+ generate a 'Bar plot of Customer Segment counts'
+
+Variable `dfs: list[pd.DataFrame]` is already declared.
+
+At the end, declare "result" variable as a dictionary of type and value.
+
+If you are asked to plot a chart, use "matplotlib" for charts, save as png.
+
+
+Generate python code and return full updated code:
+            
+2025-11-27 12:54:08 [INFO] Code generated:
+            ```
+            # TODO: import the required dependencies
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Write code here
+combined_df = pd.concat(dfs, ignore_index=True)
+segment_counts = combined_df['Customer_Segment'].value_counts()
+
+plt.figure(figsize=(10, 6))
+segment_counts.plot(kind='bar')
+plt.xlabel('Customer Segment')
+plt.ylabel('Count')
+plt.title('Bar Plot of Customer Segment Counts')
+plt.savefig('temp_chart.png')
+plt.close()
+
+# Declare result var: 
+result = {"type": "plot", "value": "temp_chart.png"}
+            ```
+            
+2025-11-27 12:54:08 [INFO] Executing Step 4: CachePopulation
+2025-11-27 12:54:08 [INFO] Executing Step 5: CodeCleaning
+2025-11-27 12:54:08 [INFO] Saving charts to C:\Users\admin\PycharmProjects\MarketingAgent\exports\charts\temp_chart.png
+2025-11-27 12:54:08 [INFO] 
+Code running:
+```
+combined_df = pd.concat(dfs, ignore_index=True)
+segment_counts = combined_df['Customer_Segment'].value_counts()
+plt.figure(figsize=(10, 6))
+segment_counts.plot(kind='bar')
+plt.xlabel('Customer Segment')
+plt.ylabel('Count')
+plt.title('Bar Plot of Customer Segment Counts')
+plt.savefig('C:/Users/admin/PycharmProjects/MarketingAgent/exports/charts/temp_chart.png')
+plt.close()
+result = {'type': 'plot', 'value': 'C:/Users/admin/PycharmProjects/MarketingAgent/exports/charts/temp_chart.png'}
+        ```
+2025-11-27 12:54:08 [INFO] Executing Step 6: CodeExecution
+2025-11-27 12:54:08 [INFO] Executing Step 7: ResultValidation
+2025-11-27 12:54:08 [INFO] Answer: {'type': 'plot', 'value': 'C:/Users/admin/PycharmProjects/MarketingAgent/exports/charts/temp_chart.png'}
+2025-11-27 12:54:08 [INFO] Executing Step 8: ResultParsing
+2025-11-27 12:54:21 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F387BC3B0>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 127484
+API Key: lsv2_********************************************bf
+patch: trace=5d260306-e6bd-45c9-888b-3eb897085748,id=5d260306-e6bd-45c9-888b-3eb897085748
+2025-11-27 16:07:49 [INFO] Use pytorch device_name: cpu
+2025-11-27 16:07:49 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 16:08:00 [INFO] Use pytorch device_name: cpu
+2025-11-27 16:08:00 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 16:08:31 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-27 16:49:53 [INFO] Use pytorch device_name: cpu
+2025-11-27 16:49:53 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 16:50:12 [INFO] Use pytorch device_name: cpu
+2025-11-27 16:50:12 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 16:50:52 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-27 16:53:13 [INFO] Use pytorch device_name: cpu
+2025-11-27 16:53:13 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 16:53:27 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+2025-11-27 16:54:06 [INFO] Use pytorch device_name: cpu
+2025-11-27 16:54:06 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 16:54:06 [INFO] Use pytorch device_name: cpu
+2025-11-27 16:54:06 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 16:56:18 [INFO] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-11-27 16:56:19 [WARNING] Retrying (Retry(total=1, connect=1, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F1859E210>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 16:56:19 [WARNING] Retrying (Retry(total=0, connect=0, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F1859E060>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 16:56:19 [INFO] Backing off send_request(...) for 0.4s (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F1859DE80>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")))
+2025-11-27 16:56:20 [WARNING] Retrying (Retry(total=1, connect=1, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F1859DCA0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 16:56:20 [WARNING] Retrying (Retry(total=0, connect=0, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F1859D2E0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 16:56:20 [INFO] Backing off send_request(...) for 0.3s (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F1859D0D0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")))
+2025-11-27 16:56:20 [WARNING] Retrying (Retry(total=1, connect=1, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F1859CD10>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 16:56:20 [WARNING] Retrying (Retry(total=0, connect=0, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F1859CAD0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 16:56:20 [INFO] Backing off send_request(...) for 2.0s (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F1859C8C0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")))
+2025-11-27 16:56:22 [WARNING] Retrying (Retry(total=1, connect=1, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F1859C560>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 16:56:22 [WARNING] Retrying (Retry(total=0, connect=0, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F1859C320>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 16:56:22 [ERROR] Giving up send_request(...) after 4 tries (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F1859C110>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")))
+2025-11-27 16:56:25 [INFO] Use pytorch device_name: cpu
+2025-11-27 16:56:25 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 16:56:39 [INFO] Use pytorch device_name: cpu
+2025-11-27 16:56:39 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 16:56:52 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F379F5D90>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 1826
+API Key: lsv2_********************************************bf
+post: trace=6912e024-430b-46e8-9f96-287107fcaa74,id=6912e024-430b-46e8-9f96-287107fcaa74
+2025-11-27 16:57:05 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F379F4B90>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 3252
+API Key: lsv2_********************************************bf
+patch: trace=6912e024-430b-46e8-9f96-287107fcaa74,id=6912e024-430b-46e8-9f96-287107fcaa74
+2025-11-27 17:07:51 [INFO] Use pytorch device_name: cpu
+2025-11-27 17:07:51 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 17:07:56 [INFO] Use pytorch device_name: cpu
+2025-11-27 17:07:56 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 17:07:56 [INFO] Use pytorch device_name: cpu
+2025-11-27 17:07:56 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 17:08:10 [WARNING] Retrying (Retry(total=1, connect=1, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F379C7020>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 17:08:10 [WARNING] Retrying (Retry(total=0, connect=0, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F379C5A90>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 17:08:10 [INFO] Backing off send_request(...) for 0.5s (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F379C57F0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")))
+2025-11-27 17:08:11 [WARNING] Retrying (Retry(total=1, connect=1, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F379C68D0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 17:08:11 [WARNING] Retrying (Retry(total=0, connect=0, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F379C64E0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 17:08:11 [INFO] Backing off send_request(...) for 0.5s (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F379C6C30>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")))
+2025-11-27 17:08:11 [WARNING] Retrying (Retry(total=1, connect=1, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F379C7230>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 17:08:11 [WARNING] Retrying (Retry(total=0, connect=0, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F379C72F0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 17:08:11 [INFO] Backing off send_request(...) for 2.5s (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F37FB0A40>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")))
+2025-11-27 17:08:14 [WARNING] Retrying (Retry(total=1, connect=1, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F379C6540>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 17:08:14 [WARNING] Retrying (Retry(total=0, connect=0, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F379C6990>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 17:08:14 [ERROR] Giving up send_request(...) after 4 tries (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F379C4650>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")))
+2025-11-27 17:08:15 [INFO] Use pytorch device_name: cpu
+2025-11-27 17:08:15 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 17:08:38 [INFO] Use pytorch device_name: cpu
+2025-11-27 17:08:38 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 17:08:51 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F37DF31A0>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 1827
+API Key: lsv2_********************************************bf
+post: trace=55ffee71-524d-4734-874c-09eed48bf20b,id=55ffee71-524d-4734-874c-09eed48bf20b
+2025-11-27 17:09:10 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F37FB23C0>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 2564
+API Key: lsv2_********************************************bf
+patch: trace=55ffee71-524d-4734-874c-09eed48bf20b,id=55ffee71-524d-4734-874c-09eed48bf20b
+2025-11-27 17:45:36 [INFO] Use pytorch device_name: cpu
+2025-11-27 17:45:36 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 17:45:36 [INFO] Use pytorch device_name: cpu
+2025-11-27 17:45:36 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 17:45:51 [WARNING] Retrying (Retry(total=1, connect=1, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F3B4BC0E0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 17:45:51 [WARNING] Retrying (Retry(total=0, connect=0, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F1A5EC830>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 17:45:51 [INFO] Backing off send_request(...) for 0.7s (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F17E086B0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")))
+2025-11-27 17:45:51 [WARNING] Retrying (Retry(total=1, connect=1, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F387D55E0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 17:45:51 [WARNING] Retrying (Retry(total=0, connect=0, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F387D5220>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 17:45:51 [INFO] Backing off send_request(...) for 0.8s (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F387D79E0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")))
+2025-11-27 17:45:52 [WARNING] Retrying (Retry(total=1, connect=1, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F387D5A90>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 17:45:52 [WARNING] Retrying (Retry(total=0, connect=0, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F387D73B0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 17:45:52 [INFO] Backing off send_request(...) for 2.3s (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F387D7290>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")))
+2025-11-27 17:45:54 [WARNING] Retrying (Retry(total=1, connect=1, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F387D5CA0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 17:45:54 [WARNING] Retrying (Retry(total=0, connect=0, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F3B116810>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 17:45:54 [ERROR] Giving up send_request(...) after 4 tries (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F1A5EC530>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")))
+2025-11-27 17:45:56 [INFO] Use pytorch device_name: cpu
+2025-11-27 17:45:56 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 17:45:56 [INFO] Use pytorch device_name: cpu
+2025-11-27 17:45:56 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 17:46:19 [INFO] Use pytorch device_name: cpu
+2025-11-27 17:46:19 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 17:46:31 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F378D8200>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 1825
+API Key: lsv2_********************************************bf
+post: trace=203c44e3-2aac-4971-a468-9cf09657a301,id=203c44e3-2aac-4971-a468-9cf09657a301
+2025-11-27 17:46:52 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F3B698D40>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 3235
+API Key: lsv2_********************************************bf
+patch: trace=203c44e3-2aac-4971-a468-9cf09657a301,id=203c44e3-2aac-4971-a468-9cf09657a301
+2025-11-27 17:54:40 [INFO] Use pytorch device_name: cpu
+2025-11-27 17:54:40 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 17:54:40 [INFO] Use pytorch device_name: cpu
+2025-11-27 17:54:40 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 17:54:59 [INFO] Use pytorch device_name: cpu
+2025-11-27 17:54:59 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 17:55:12 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F3764CB00>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 1841
+API Key: lsv2_********************************************bf
+post: trace=16e493e8-cefb-4894-bdc4-ad2d2c3d44aa,id=16e493e8-cefb-4894-bdc4-ad2d2c3d44aa
+2025-11-27 17:55:27 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F3B6999A0>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 2979
+API Key: lsv2_********************************************bf
+patch: trace=16e493e8-cefb-4894-bdc4-ad2d2c3d44aa,id=16e493e8-cefb-4894-bdc4-ad2d2c3d44aa
+2025-11-27 18:06:07 [INFO] Use pytorch device_name: cpu
+2025-11-27 18:06:07 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 18:06:07 [INFO] Use pytorch device_name: cpu
+2025-11-27 18:06:07 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 18:06:44 [WARNING] Retrying (Retry(total=1, connect=1, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F44FE53D0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 18:06:44 [WARNING] Retrying (Retry(total=0, connect=0, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F44FE5B80>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 18:06:44 [INFO] Backing off send_request(...) for 0.8s (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F44FE6000>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")))
+2025-11-27 18:06:45 [WARNING] Retrying (Retry(total=1, connect=1, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F4727D250>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 18:06:45 [WARNING] Retrying (Retry(total=0, connect=0, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F4727ECF0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 18:06:45 [INFO] Backing off send_request(...) for 1.5s (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F4727EB10>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")))
+2025-11-27 18:06:46 [WARNING] Retrying (Retry(total=1, connect=1, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F4727FFB0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 18:06:46 [WARNING] Retrying (Retry(total=0, connect=0, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F4727FA70>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 18:06:46 [INFO] Backing off send_request(...) for 3.6s (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F4727F3B0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")))
+2025-11-27 18:06:50 [INFO] Use pytorch device_name: cpu
+2025-11-27 18:06:50 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 18:06:50 [WARNING] Retrying (Retry(total=1, connect=1, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F471D18B0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 18:06:50 [WARNING] Retrying (Retry(total=0, connect=0, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F471D12E0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 18:06:50 [ERROR] Giving up send_request(...) after 4 tries (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F471D3BC0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")))
+2025-11-27 18:07:11 [INFO] Use pytorch device_name: cpu
+2025-11-27 18:07:11 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 18:07:24 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F3B4FA8A0>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 1829
+API Key: lsv2_********************************************bf
+post: trace=792fe605-0071-4da4-aa3a-e30726c58167,id=792fe605-0071-4da4-aa3a-e30726c58167
+2025-11-27 18:07:43 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F44FE4BF0>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 2867
+API Key: lsv2_********************************************bf
+patch: trace=792fe605-0071-4da4-aa3a-e30726c58167,id=792fe605-0071-4da4-aa3a-e30726c58167
+2025-11-27 20:07:33 [INFO] Use pytorch device_name: cpu
+2025-11-27 20:07:33 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 20:07:33 [INFO] Use pytorch device_name: cpu
+2025-11-27 20:07:33 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 20:08:08 [INFO] Use pytorch device_name: cpu
+2025-11-27 20:08:08 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 20:08:08 [INFO] Use pytorch device_name: cpu
+2025-11-27 20:08:08 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 20:08:15 [WARNING] Retrying (Retry(total=1, connect=1, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F3BA8E8A0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 20:08:15 [WARNING] Retrying (Retry(total=0, connect=0, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F3BA8CB90>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 20:08:15 [INFO] Backing off send_request(...) for 1.0s (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F3BA8E360>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")))
+2025-11-27 20:08:16 [WARNING] Retrying (Retry(total=1, connect=1, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F378D82C0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 20:08:16 [WARNING] Retrying (Retry(total=0, connect=0, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F378D8CE0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 20:08:16 [INFO] Backing off send_request(...) for 1.9s (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F378D86B0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")))
+2025-11-27 20:08:18 [WARNING] Retrying (Retry(total=1, connect=1, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F378D8F20>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 20:08:18 [WARNING] Retrying (Retry(total=0, connect=0, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F378DAF60>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 20:08:18 [INFO] Backing off send_request(...) for 2.4s (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F378D89E0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")))
+2025-11-27 20:08:21 [WARNING] Retrying (Retry(total=1, connect=1, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F3BA8C440>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 20:08:21 [WARNING] Retrying (Retry(total=0, connect=0, read=2, redirect=None, status=None)) after connection broken by 'NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F3BA8CA40>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")': /batch/
+2025-11-27 20:08:21 [ERROR] Giving up send_request(...) after 4 tries (requests.exceptions.ConnectionError: HTTPSConnectionPool(host='us.i.posthog.com', port=443): Max retries exceeded with url: /batch/ (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F112531A0>: Failed to resolve 'us.i.posthog.com' ([Errno 11001] getaddrinfo failed)")))
+2025-11-27 20:08:21 [INFO] Use pytorch device_name: cpu
+2025-11-27 20:08:21 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 20:08:43 [INFO] Use pytorch device_name: cpu
+2025-11-27 20:08:43 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 20:08:56 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F379856D0>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 1825
+API Key: lsv2_********************************************bf
+post: trace=8d66c120-502d-4cf7-b273-cefe36e2c255,id=8d66c120-502d-4cf7-b273-cefe36e2c255
+2025-11-27 20:09:19 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F373D87A0>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 2773
+API Key: lsv2_********************************************bf
+patch: trace=8d66c120-502d-4cf7-b273-cefe36e2c255,id=8d66c120-502d-4cf7-b273-cefe36e2c255
+2025-11-27 20:09:31 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F37985370>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 1946
+API Key: lsv2_********************************************bf
+post: trace=49735def-61b2-4f97-9b69-ae93a5270b7f,id=49735def-61b2-4f97-9b69-ae93a5270b7f
+2025-11-27 20:09:35 [INFO] Use pytorch device_name: cpu
+2025-11-27 20:09:35 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 20:09:44 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F379EF530>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 6631
+API Key: lsv2_********************************************bf
+patch: trace=49735def-61b2-4f97-9b69-ae93a5270b7f,id=49735def-61b2-4f97-9b69-ae93a5270b7f
+2025-11-27 20:09:56 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F379EF440>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 1826
+API Key: lsv2_********************************************bf
+post: trace=2380b256-a3a3-4f1d-a63e-3fda3f894110,id=2380b256-a3a3-4f1d-a63e-3fda3f894110
+2025-11-27 20:10:09 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F379EF950>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 12938
+API Key: lsv2_********************************************bf
+post: trace=bce45c40-9cb1-425d-8833-532ec928b1ef,id=bce45c40-9cb1-425d-8833-532ec928b1ef; patch: trace=2380b256-a3a3-4f1d-a63e-3fda3f894110,id=2380b256-a3a3-4f1d-a63e-3fda3f894110
+2025-11-27 20:10:19 [INFO] Use pytorch device_name: cpu
+2025-11-27 20:10:19 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 20:10:23 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F37984080>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 5838
+API Key: lsv2_********************************************bf
+patch: trace=bce45c40-9cb1-425d-8833-532ec928b1ef,id=bce45c40-9cb1-425d-8833-532ec928b1ef
+2025-11-27 20:10:41 [INFO] Use pytorch device_name: cpu
+2025-11-27 20:10:41 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 20:11:03 [INFO] Use pytorch device_name: cpu
+2025-11-27 20:11:03 [INFO] Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-11-27 20:11:16 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F37952D20>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 1843
+API Key: lsv2_********************************************bf
+post: trace=53ddf98b-c5dd-4c26-a831-ff2ecd2aa558,id=53ddf98b-c5dd-4c26-a831-ff2ecd2aa558
+2025-11-27 20:11:28 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F37953F80>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 4913
+API Key: lsv2_********************************************bf
+patch: trace=53ddf98b-c5dd-4c26-a831-ff2ecd2aa558,id=53ddf98b-c5dd-4c26-a831-ff2ecd2aa558
+2025-11-27 20:11:41 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F37953CE0>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 1933
+API Key: lsv2_********************************************bf
+post: trace=c4549ca5-221c-4ad4-89ee-13b0769a36d6,id=c4549ca5-221c-4ad4-89ee-13b0769a36d6
+2025-11-27 20:11:54 [WARNING] Failed to batch ingest runs: langsmith.utils.LangSmithConnectionError: Connection error caused failure to POST https://api.smith.langchain.com/runs/batch in LangSmith API. Please confirm your internet connection. ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'api.smith.langchain.com\', port=443): Max retries exceeded with url: /runs/batch (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020F37950E90>: Failed to resolve \'api.smith.langchain.com\' ([Errno 11001] getaddrinfo failed)"))'))
+Content-Length: 6155
+API Key: lsv2_********************************************bf
+patch: trace=c4549ca5-221c-4ad4-89ee-13b0769a36d6,id=c4549ca5-221c-4ad4-89ee-13b0769a36d6
